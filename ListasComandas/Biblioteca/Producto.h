@@ -1,0 +1,33 @@
+//
+// Created by cffmg on 5/26/2026.
+//
+
+#ifndef CLASESHERENCIAS_PRODUCTO_H
+#define CLASESHERENCIAS_PRODUCTO_H
+
+#include <cstring>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class Producto {
+public:
+    Producto();
+    virtual ~Producto();
+    Producto(const Producto &);
+    void get_nombre(char *);
+    void set_nombre(const char *);
+    double get_precio() const;
+    void set_precio(double precio);
+    virtual  void lee(ifstream &);
+    virtual  void imprimir(ofstream &);
+    virtual char tiposoy()=0;
+    virtual Producto *asignapoli() const = 0;
+private:
+    char *nombre;
+    double precio;
+};
+
+
+#endif //CLASESHERENCIAS_PRODUCTO_H
