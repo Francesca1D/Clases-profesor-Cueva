@@ -5,6 +5,7 @@
 #ifndef STL_MULTAS_INFRACCION_H
 #define STL_MULTAS_INFRACCION_H
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ class Infraccion {
         void set_gravedad(const string &gravedad);
         string get_descripcion() const;
         void set_descripcion(const string &descripcion);
+        void leeinfraccion(ifstream&);
 };
 
 

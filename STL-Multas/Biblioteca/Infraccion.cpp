@@ -39,3 +39,15 @@ string Infraccion::get_descripcion() const {
 void Infraccion::set_descripcion(const string &descripcion) {
     this->descripcion = descripcion;
 }
+//G2007,425.23,GRAVE,No conducir por el carril de extremo derecho de la calzada un vehiculo de transporte público de pasajeros o de carga.
+//M1029,586.45,MUY GRAVE,Conducir un vehiculo especial que no se ajuste a las exigencias reglamentarias sin la autorizacion correspondiente.
+
+void Infraccion::leeinfraccion(ifstream &arch) {
+    char c;
+    getline(arch, codigo,',');
+    if (arch.eof())return;
+    arch >> multa>>c;
+    getline(arch, gravedad,',');
+    getline(arch, descripcion,'\n');
+
+}

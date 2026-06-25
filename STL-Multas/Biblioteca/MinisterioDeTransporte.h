@@ -15,9 +15,13 @@ class MinisterioDeTransporte {
     private:
         list<Infraccion>tablaInfracciones;
         list<Empresa>listaEmpresas;
+        void buscarasigna(int dni,ifstream &arch);
     public:
         MinisterioDeTransporte();
-
+        void cargaDeInfracciones(const char*);
+        void cargaEmpresas(const char*);
+        void cargaVehiculos(const char*);
+        void reporteDeEmpresas(const char*);
 };
 
 

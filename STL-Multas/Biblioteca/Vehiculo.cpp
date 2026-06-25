@@ -31,5 +31,14 @@ string Vehiculo::get_modelo() const {
 void Vehiculo::set_modelo(const string &modelo) {
     this->modelo = modelo;
 }
-
+// M421-807,Honda,Fit
+void Vehiculo::leevehiculo(ifstream &arch) {
+    getline(arch, placa,',');
+    if (arch.eof())return;
+    getline(arch, marca,',');
+    getline(arch, modelo,'\n');
+}
+void Vehiculo::imprimevehiculo(ofstream &arch) {
+    arch<<left<<setw(20)<<placa<<setw(30)<<marca<<setw(30)<<modelo<<endl;
+}
 

@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <fstream>
 
 #include "Multa.h"
 #include "Vehiculo.h"
@@ -19,6 +20,7 @@ class Empresa {
         string nombre;
         string distrito;
         map<string,Vehiculo> vehiculos;
+        //map<Vehiculo,vector<Multa>>;
         vector<Multa>multasRecibidas;
     public:
         Empresa();
@@ -28,7 +30,9 @@ class Empresa {
         void set_nombre(const string &nombre);
         string get_distrito() const;
         void set_distrito(const string &distrito);
+        void leeempresa(ifstream&);
+        void cargarvehiculo(ifstream&);
+        void imprimeempresa(ofstream&);
+
 };
-
-
 #endif //STL_MULTAS_EMPRESA_H
